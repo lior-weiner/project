@@ -1,1 +1,8 @@
-# project
+# Final Project Deep Learning
+For our study, we utilized the Phishing Email Dataset available on Kaggle. This dataset is specifically designed to capture the core characteristics of phishing emails, including subject lines, email body text, and labels that indicate whether an email is spam (phishing) or legitimate. The dataset contains approximately 82,500 emails, comprising 42,891 spam emails and 39,595 legitimate ones.
+
+Upon closer examination, we identified 408 duplicate emails that shared identical content and labels. These duplicates were removed to ensure the integrity of our analysis. To gain initial insights, we conducted a word frequency analysis, particularly focusing on the most common words in spam emails. As anticipated, terms related to financial exploitation, such as "money" and "please," were frequently observed, apart from date-related terms like "August."
+
+To quantify this observation, we compared the frequency of the word "money" between spam and legitimate emails. The term appeared 17,797 times in spam emails, a stark contrast to its 1,906 occurrences in legitimate emails.
+We also explored the unique word counts across spam and legitimate emails and found no significant differences. Additionally, we examined the distribution of email lengths to further understand the structure of the emails in the dataset.
+For tokenization, we employed the BERT tokenizer (BertTokenizerFast) with a vocabulary size of 30,522 and a maximum token length of 512, we purposefully did not drop stop words because we believe those can be useful in identifying rather an email is spam or not. During preprocessing, we tokenized the text input and identified the email with the most tokens, which had an extraordinary count of 2,597,755 tokens—this was a spam email.
